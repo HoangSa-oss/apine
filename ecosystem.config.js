@@ -17,7 +17,6 @@ module.exports = {
     script : "npm",
     args:"run add",
     cron_restart: "*/30 * * * * *"
-
   }
 ]
 }
