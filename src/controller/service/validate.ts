@@ -4,8 +4,9 @@ export const validateGetkeyword  =  [
     body('idKeywordStore')
       .custom(value=>{
         if(!isValidObjectId(value)){
-          throw new Error('idKeywordStore error')
+          throw new Error('id Error');
         }
+        return true
       })
     ,
     body('date')

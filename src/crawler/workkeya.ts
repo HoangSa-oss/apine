@@ -18,9 +18,6 @@ export const  tiktokProfile = async(indexCookie:number)=>{
       ignoreHTTPSErrors: true,
       executablePath:executablePath(),
        args: ['--disable-setuid-sandbox', '--no-sandbox'],
-          env: {
-        DISPLAY: ":10.0"
-    }
     
     }); 
     let ordinalCookie = 0
@@ -36,7 +33,8 @@ export const  tiktokProfile = async(indexCookie:number)=>{
         }
         console.log("versionjobdata",job.data.version)
         let arrayData = await keywordFuntion({ordinalCookie:ordinalCookie,browser:browser,job:job,indexCookie:indexCookie})
-        if(arrayData.length>400){
+        console.log(arrayData.length)
+        if(arrayData.length>200){
             arrayData.map(async(x)=>{
                     const insert =UrlPost.build({...job.data,...x})
                     await insert.save()

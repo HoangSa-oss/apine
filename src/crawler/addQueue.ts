@@ -17,7 +17,7 @@ const addQueue = async  ()=>{
         queueKeyWordApi.add({...x.toObject(),"addQueued":0})
         await Keyword.updateMany(x,{addQueue:true})
     })  
-   
+    console.log(await queueKeyWordApi.count())
     } catch (error) {
         console.log(error)
     }

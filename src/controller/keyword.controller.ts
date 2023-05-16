@@ -34,11 +34,19 @@ export const postKeyword = async (req:Request,res:Response)=>{
 }
 export const getKeyword  = async (req:Request,res:Response)=>{
     const {idKeywordStore,date,limit,skip}= req.body
+    console.log(req.body)
+    console.log(idKeywordStore)
+    const keywordStore = await  KeywordStore.findOne({_id:idKeywordStore})
+    console.log(keywordStore)
+    if(!keywordStore){
+        throw new BadRequestError('Not id found')
+    }
     const urlPost = await getKeywordService({idKeywordStore,date,limit,skip})
     res.status(200).send(urlPost)
 }
 export const monitorKeyword = async (req:Request,res:Response)=>{
     const {idKeywordStore}=req.body
+    
     if(!isValidObjectId(idKeywordStore)){
         throw new BadRequestError('check Id')
     }
