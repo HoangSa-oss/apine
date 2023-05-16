@@ -1,6 +1,6 @@
 module.exports = {
   apps : [
-  {
+      {
     name   : "api",
     script : "npm",
     args:"start"
@@ -8,7 +8,9 @@ module.exports = {
   {
     name   : "crawler",
     script : "npm",
-    args:"run crawler"
+    args:"run crawler",
+    instances : "2",
+    exec_mode : "cluster"
   },
   {
     name   : "addQueue",
