@@ -15,6 +15,7 @@ const run = async()=>{
         versionProcessing = await KeywordProcess.findOne({})
     }
     for(let i=0;i<5;i++){
+        console.log(i)
         await tiktokProfile(i)
     }
 }
