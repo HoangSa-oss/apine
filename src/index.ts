@@ -26,7 +26,7 @@ app.use(currentUser)
 app.use('/',keywordRouter)
 app.use('/',authRouter)
 app.listen(5000,async ()=>{
-    console.log('hihihaa tao lay may port 5000')
+    console.log('hihihaa tao lay may do 5000 port 5000')
 })
 // app.all('*', async (req, res) => {
 //     throw new NotFoundError();
