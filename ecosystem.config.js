@@ -1,6 +1,6 @@
 module.exports = {
   apps : [
-      {
+  {
     name   : "api",
     script : "npm",
     args:"start"
@@ -17,6 +17,7 @@ module.exports = {
     script : "npm",
     args:"run add",
     cron_restart: "*/30 * * * * *"
+
   }
 ]
 }
