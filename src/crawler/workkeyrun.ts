@@ -14,7 +14,7 @@ const run = async()=>{
         await insert.save()
         versionProcessing = await KeywordProcess.findOne({})
     }
-    for(let i=0;i<1;i++){
+    for(let i=0;i<5;i++){
         await tiktokProfile(i)
     }
 }
